@@ -1,0 +1,11 @@
+{
+  "name": "speedify",
+  "version": "0.0.1",
+  "description": "Chrome Extension to speed up videos on the page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alex Kharouk",
+  "license": "ISC"
+}
