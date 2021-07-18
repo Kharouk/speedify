@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Speedify",
+  "version": "1.0.0",
+  "description": "Speed up videos on the page.",
+  "short_name": "Speedify",
+  "permissions": ["activeTab", "declarativeContent", "storage", "<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["index.js"]
+    }
+  ]
+}
