@@ -1,0 +1,9 @@
+* {
+  background-color: #eee;
+  min-width: 25ch;
+}
+
+.container {
+  display: grid;
+  grid-auto-columns: 'h2' 'button button' 'button button';
+}

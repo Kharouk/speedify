@@ -4,14 +4,14 @@
   "version": "1.0.0",
   "description": "Speed up videos on the page.",
   "short_name": "Speedify",
-  "permissions": ["activeTab", "declarativeContent", "storage", "<all_urls>"],
+  "permissions": ["activeTab", "declarativeContent", "storage"],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
       "js": ["speed.js"]
     }
   ],
-  "browser_action": {
+  "action": {
     "default_title": "We need to Speed up this Learning!",
     "default_popup": "popup.html"
   }

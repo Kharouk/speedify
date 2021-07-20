@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Speedify</title>
+    <link rel="stylesheet" href="popup.css" />
     <script src="speed.js"></script>
   </head>
   <body>
-    <h1>Get yer Speed on!</h1>
-    <main>
-      <h2>How fast are we going?</h2>
-      <button id="threeX" onclick="speedUp">3x</button>
-    </main>
+    <div>
+      <h1>Get yer Speed on!</h1>
+      <main class="container">
+        <label for="speed-select">How fast are we going?:</label>
+        <select name="speeds" id="speed-select">
+          <option default value="">--Please choose an option--</option>
+          <option value="2">2x</option>
+          <option value="2.5">2.5x</option>
+          <option value="3">3x</option>
+          <option value="3.5">3.5x</option>
+        </select>
+        <button id="update-speed--button">Update Speed</button>
+        <button id="reset" class="speed--button">reset</button>
+      </main>
+    </div>
   </body>
 </html>
