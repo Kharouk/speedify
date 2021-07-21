@@ -1,35 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
   let updateButton = document.querySelector('#update-speed--button');
   let resetButton = document.querySelector('#reset--button');
-
-  // resetButton.addEventListener('click', async (e) => {
-  //   let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-  // });
+  let speedValue = document.querySelector('#speed--input');
 
   updateButton.addEventListener('click', async (e) => {
-    // let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-      chrome.tabs.sendMessage(
-        tabs[0].id,
-        { text: 'message' },
-        function (response) {
-          console.log(response);
-        }
-      );
+    let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    // console.log(speedValue.value);
+
+    chrome.scripting.executeScript({
+      target: { tabId: tab.id },
+      function: () => {
+        const vid = document.body.querySelector('video');
+        vid.playbackRate = 2;
+      },
     });
-    let speedSelection = document.querySelector(
-      '#speed-select option:checked'
-    ).value;
-
-    // chrome.runtime.onMessage.addListener((msg, sender, response) => {
-    //   console.log('sent');
-    //   if (msg.name === 'message') response({ text: speedSelection });
-    // });
-
-    // chrome.scripting.executeScript({
-    //   target: { tabId: tab.id },
-    //   function: setPageVideoPlayback,
-    // });
   });
 
   // function setPageVideoPlayback() {
