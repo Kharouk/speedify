@@ -7,6 +7,13 @@
   "background": {
     "service_worker": "background.js"
   },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"],
+      "run_at": "document_end"
+    }
+  ],
   "action": {
     "default_title": "We need to Speed up this Learning!",
     "default_popup": "popup.html"
